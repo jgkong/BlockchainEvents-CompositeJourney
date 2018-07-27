@@ -39,7 +39,7 @@ git clone https://github.com/IBM/BlockchainEvents-CompositeJourney.git
 
 다음 명령을 사용하여 네트워크 아카이브를 생성합니다:
 ```bash
-cd Composer
+cd BlockchainEvents-CompositeJourney/Composer
 npm install
 ```
 아래와 같은 결과가 나옵니다:
@@ -91,9 +91,9 @@ npm test
 [가이드](https://github.com/IBM/BlockchainNetwork-CompositeJourney/blob/master/README-ko.md#2-%ED%95%98%EC%9D%B4%ED%8D%BC%EB%A0%88%EC%A0%80-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)를 참고하여 로컬 패브릭을 시작합니다.
 이제 `product-auction.bna` 파일이 들어있는 `dist` 폴더로 디렉토리를 변경하고 다음을 입력합니다:
 ```
-cd dist
-composer runtime install --card PeerAdmin@hlfv1 --businessNetworkName events
-composer network start --card PeerAdmin@hlfv1 --networkAdmin admin --networkAdminEnrollSecret adminpw --archiveFile events.bna --file networkadmin.card
+cd BlockchainEvents-CompositeJourney/Composer/dist
+composer network install -c PeerAdmin@hlfv1 -a events.bna
+composer network start -c PeerAdmin@hlfv1 -n events -V 0.0.1 -A admin -S adminpw -f networkadmin.card
 composer card import --file networkadmin.card
 ```
 
@@ -114,7 +114,7 @@ Command succeeded
 REST API를 만들려면 `composer-rest-server` 를 시작하여 배포된 비즈니스 네트워크의 접속 정보를 설정합니다.  and tell it how to connect to our deployed business network.
 이제 디렉토리를 제품 경매 폴더로 변경하고 다음을 입력하여 서버를 시작하십시오:
 ```bash
-cd ..
+BlockchainEvents-CompositeJourney/Composer
 composer-rest-server
 ```
 
@@ -155,7 +155,7 @@ node server.js
 
 새 터미널을 열고 `BlockchainEvents` 디렉토리로 이동합니다. 다음 명령을 사용하여 Composer Playground를 설치합니다:
 ```
-npm i composer-playground@0.16.1
+npm i composer-playground@0.19.5
 ```
 
 로컬에서 composer playground를 사용하시려면 다음을 사용하십시오:
