@@ -12,7 +12,7 @@
 
 ## 애플리케이션 워크플로우 도표
 
-![Workflow](images/workflow.png)
+![Workflow](images/arch-blockchain-events.png)
 
 * 하이퍼레저 패브릭 네트워크 시작
 * BNA (Business Network Archive) 생성 및 배포
